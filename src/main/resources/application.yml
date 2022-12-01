@@ -12,24 +12,3 @@ spring:
           lower-case-service-id: true
   config:
     import: optional:configserver:http://configserver:8070/
-management:
-  endpoint:
-    shutdown:
-      enabled: true
-  auditevents:
-    enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-
-info:
-    app:
-        description: Bank System Gateway Application
-        name: Gateway Server Bank System Microservice
-        version: 1.0.0
-logging:
-    level:
-        com:
-            banksystem:
-                gatewayserver: DEBUG
