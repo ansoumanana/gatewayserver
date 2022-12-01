@@ -16,9 +16,9 @@ import reactor.core.publisher.Mono;
 
 @Component
 @Order(1)
-public class TraceFilter implements GlobalFilter {
+public class BankSystemTraceFilter implements GlobalFilter {
 
-    private static final Logger logger = LoggerFactory.getLogger(TraceFilter.class);
+    private static final Logger logger = LoggerFactory.getLogger(BankSystemTraceFilter.class);
 
     @Autowired
     FilterUtility filterUtility;
