@@ -22,9 +22,9 @@ public class GatewayserverApplication {
 
 		return builder.routes()
 				.route(p -> p
-						.path("/banksystem/account/**")
+						.path("/banksystem/accounts/**")
 						.filters(f -> f
-								.rewritePath("/banksystem/account/(?<segment>.*)","/${segment}")
+								.rewritePath("/banksystem/accounts/(?<segment>.*)","/${segment}")
 								.addResponseHeader("X-Response-Time",new Date().toString()))
 						.uri("lb://ACCOUNT")).
 				route(p -> p
