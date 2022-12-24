@@ -12,3 +12,26 @@ spring:
           lower-case-service-id: true
   config:
     import: optional:configserver:http://localhost:8070/
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloack:
+            tokenUri: http://localhost:8080/realms/master/protocol/openid-connect/token
+            authorizationUri: http://localhost:8080/realms/master/protocol/openid-connect/auth
+            userInfoUri: http://localhost:8080/realms/master/protocol/openid-connect/userinfo
+            userNameAttribute: preferred_username
+        registration:
+          banksystem-gateway:
+            provider: keycloack
+            clientId: banksystem-gatewayui
+            scope: openid
+            clientSecret: ugtEVGBBNv4vMBepuGeiTJV0VY84oOvE
+            authorizationGrantType: authorization_code
+           # redirectUri: '{baseUrl}/login/oauth2/code/keycloak'
+            redirectUri: https://www.keycloak.org/app/*
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
